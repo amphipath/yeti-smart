@@ -7,11 +7,13 @@ type (
 		GetAttemptCost(itemLevel int, currentStar int) int
 		GetProbabilities(currentStar int) (float64, float64, float64, float64)
 		GetMaxStar() int
+		GetPostBoomStar() int
 	}
 
 	sfSystem struct {
 		Probabilities []starforce.MatrixRow
 		CostFunction  func(itemLevel, currentStar int) int
+		PostBoomStar int
 	}
 )
 
@@ -28,4 +30,8 @@ func (s *sfSystem) GetBaseAttemptCost(itemLevel int, currentStar int) int {
 
 func (s *sfSystem) GetMaxStar() int {
 	return len(s.Probabilities)
+}
+
+func (s *sfSystem) GetPostBoomStar() int {
+	return s.PostBoomStar
 }
