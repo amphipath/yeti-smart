@@ -1,4 +1,6 @@
-package starforce
+package calc
+
+import "github.com/amphipath/yeti-smart/pkg/starforce"
 
 type (
 	StarforceSystem interface {
@@ -8,7 +10,7 @@ type (
 	}
 
 	sfSystem struct {
-		Probabilities []MatrixRow
+		Probabilities []starforce.MatrixRow
 		CostFunction  func(itemLevel, currentStar int) int
 	}
 )
