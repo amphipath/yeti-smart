@@ -1,4 +1,4 @@
-package calc
+package system
 
 import "github.com/amphipath/yeti-smart/pkg/starforce"
 
