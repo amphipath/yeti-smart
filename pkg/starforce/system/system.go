@@ -1,10 +1,13 @@
 package system
 
-import "github.com/amphipath/yeti-smart/pkg/starforce"
+import (
+	"github.com/amphipath/yeti-smart/pkg/starforce"
+
+)
 
 type (
 	StarforceSystem interface {
-		GetAttemptCost(itemLevel int, currentStar int) int
+		GetAttemptCost(itemLevel int, currentStar int) Cost
 		GetProbabilities(currentStar int) (float64, float64, float64, float64)
 		GetMaxStar() int
 		GetPostBoomStar() int

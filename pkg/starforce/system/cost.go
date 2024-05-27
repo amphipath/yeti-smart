@@ -8,7 +8,7 @@ type Cost struct {
 }
 
 // Non-mutational summation of costs
-func CostSum(costs ...*Cost) (result *Cost) {
+func CostSum(costs ...Cost) (result *Cost) {
 	result.Add(costs...)
 	return
 }
@@ -19,7 +19,7 @@ func (c *Cost) Weight(m float64) *Cost {
 }
 
 // Mutational addition of costs
-func (c *Cost) Add(costs ...*Cost) {
+func (c *Cost) Add(costs ...Cost) {
 	for _, c2 := range costs {
 		c.Meso = c.Meso + c2.Meso
 		c.Boom = c.Boom + c2.Boom
