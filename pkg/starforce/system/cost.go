@@ -1,4 +1,4 @@
-package calculation
+package system
 
 type Cost struct {
 	Meso       float64
@@ -9,7 +9,7 @@ type Cost struct {
 
 // Non-mutational summation of costs
 func CostSum(costs ...*Cost) (result *Cost) {
-	result.Add(...costs)
+	result.Add(costs...)
 	return
 }
 
